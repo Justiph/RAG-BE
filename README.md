@@ -46,7 +46,7 @@ The project consists of 3 microservices:
    cd BE
    ```
 
-2. **Create `.env` file in root directory:**
+2. **Create `.env` from `.env.example` file in root directory and paste your OpenAI API Key:**
    ```env
    # OpenAI API Key (required)
    OPENAI_API_KEY=your_openai_api_key_here
@@ -252,7 +252,7 @@ GET /ping
    - TS backend sends file to Python extractor
    - Python extractor extracts content into blocks
    - TS backend performs semantic chunking
-   - Chunks are embedded and stored in ChromaDB
+   - Chunks are embedded via Python extractor and stored in ChromaDB
 
 2. **Query**:
    - Client sends question via `/api/query`
