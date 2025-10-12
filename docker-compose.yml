@@ -1,0 +1,35 @@
+# docker-compose.yml
+version: "3.8"
+
+services:
+  chroma:
+    image: ghcr.io/chroma-core/chroma:latest
+    container_name: chroma
+    ports:
+      - "8000:8000"
+    environment:
+      - CHROMA_SERVER_HOST=0.0.0.0
+      - CHROMA_SERVER_HTTP_PORT=8000
+    volumes:
+      - ./chroma_data:/chroma/.chroma
+
+  python-extractor:
+    build:
+      context: ./python-extractor
+    container_name: python-extractor
+    environment:
+      - EMBED_MODEL_NAME=intfloat/e5-base-v2
+    ports:
+      - "7001:7001"
+
+  ts-backend:
+    build:
+      context: ./ts-backend
+    container_name: ts-backend
+    env_file:
+      - ./.env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - chroma
+      - python-extractor

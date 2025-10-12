@@ -1,0 +1,9 @@
+# python-extractor/requirements.txt
+fastapi==0.114.2
+uvicorn==0.30.6
+pymupdf==1.24.10
+unstructured==0.15.13
+unstructured[pdf]==0.15.13
+sentence-transformers==3.0.1
+torch>=2.2
+numpy

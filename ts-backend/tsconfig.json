@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "target": "ES2022",
+      "lib": ["ES2022", "DOM"],            // DOM để có type cho fetch/FormData/Blob
+      "module": "ES2022",
+      "moduleResolution": "Bundler",       // hoặc "NodeNext" nếu bạn thích
+      "types": ["node"],                   // >>> thêm dòng này <<<
+      "outDir": "dist",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true
+    },
+    "include": ["src/**/*.ts"]
+  }
+  
