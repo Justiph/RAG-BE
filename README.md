@@ -39,7 +39,8 @@ The project consists of 3 microservices:
 - Node.js 20+ (if running locally)
 - Python 3.8+ (if running locally)
 
-### Running with Docker Compose (Recommended)
+There are 2 ways to run:
+### OPTION 1: Running with Docker Compose (Recommended)
 
 1. **Clone repository and navigate to project directory:**
    ```bash
@@ -67,7 +68,7 @@ The project consists of 3 microservices:
    - Python Extractor: http://localhost:7001
    - TypeScript Backend: http://localhost:3000
 
-### Running Individual Services
+### OPTION 2: Running Individual Services
 
 #### 1. ChromaDB
 ```bash
